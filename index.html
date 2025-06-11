@@ -31,16 +31,221 @@
       </div>
     </div>
   <div class="card" style="padding: 1rem;">
-  <h3>4fun AI Text 2Image Generator</h3>
-  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;border:1px solid #555;">
-    <iframe 
-      src="https://null.perchance.org/ai-text-to-image-generator" 
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
-      allowfullscreen 
-      loading="lazy">
-    </iframe>
+  
+
+   <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<style>
+  .cyber-slider-section {
+    padding: 4rem 0;
+    background: 
+      linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%),
+      radial-gradient(circle at 70% 30%, rgba(255, 20, 20, 0.1) 0%, transparent 30%),
+      radial-gradient(circle at 30% 70%, rgba(0, 150, 255, 0.1) 0%, transparent 30%);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 50, 50, 0.2);
+    border-bottom: 1px solid rgba(50, 150, 255, 0.2);
+  }
+
+  .cyber-slider-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;i
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .swiper.myCyberSwiper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 100, 0.3),
+      0 0 40px rgba(0, 100, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .swiper-slide {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .swiper-slide:hover img {
+    transform: scale(1.03);
+  }
+
+  .swiper-slide::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 1;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(200, 0, 50, 0.6);
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px !important;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #ff0055;
+    opacity: 1;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px #ff0055;
+  }
+
+  /* Cyberpunk scanline overlay */
+  .cyber-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 255, 0.03),
+        rgba(0, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    pointer-events: none;
+    z-index: 3;
+    mix-blend-mode: overlay;
+  }
+</style>
+
+<section class="cyber-slider-section">
+  <div class="swiper myCyberSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/xfce4-preview.jpg" alt="XFCE4 Desktop" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/awesomewm-preview.jpg" alt="Awesome WM" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/windows-preview.jpg" alt="Minimal Windows" />
+      </div>
+      <div class="swiper-slide">
+        <img src="images/pentest-social-preview.jpg" alt="Pentest Socials" />
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="cyber-overlay"></div>
   </div>
-</div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const cyberSwiper = new Swiper(".myCyberSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 900,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    on: {
+      init: function() {
+        document.querySelector('.myCyberSwiper').style.opacity = '1';
+      },
+    }
+  });
+
+  // Keyboard control
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') cyberSwiper.slidePrev();
+    if (e.key === 'ArrowRight') cyberSwiper.slideNext();
+  });
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
   </div>
   <footer>
   &copy; nobullshit-os | 
